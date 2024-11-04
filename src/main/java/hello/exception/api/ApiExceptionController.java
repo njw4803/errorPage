@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,7 +33,7 @@ public class ApiExceptionController {
         return new MemberDto(id, "hello " + id);
     }
 
-    @GetMapping("/api/response-status-ex1")
+    @GetMapping(value = "/api/response-status-ex1")
     public String responseStatusEx1() {
         throw new BadRequestException();
     }
